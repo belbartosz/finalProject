@@ -13,8 +13,8 @@ public interface ContainerRepository extends JpaRepository<Container, Long> {
 
     List<Container> findAllByContainerNumberContaining(String name);
 
-    List<Container> findAllByContainerNumberContainingAndCarrier_NameContainingAndContainerStatusInAndContainerTypeInAndDateOfLoadingGreaterThanEqualAndDateOfDischargeLessThanEqualAndPortOfLoading_NameContainingAndPortOfDischarge_NameContainingAndShipperName_purchaseOrderContainingAndImportantNoticeContainingAndCustomerNoticeContaining(
-            String containerNumber, String carrierName, Set<ContainerStatus> containerStatuses, Set<ContainerType> containerTypes, LocalDate dateOfLoading, LocalDate dateOfDischarge, String portOfLoadingName, String portOfDischargeName, String shipperName_purchaseOrder, String importantNotice, String customerNotice);
+//    List<Container> findAllByContainerNumberContainingAndCarrier_NameContainingAndContainerStatusInAndContainerTypeInAndDateOfLoadingGreaterThanEqualAndDateOfDischargeLessThanEqualAndPortOfLoading_NameContainingAndPortOfDischarge_NameContainingAndforwarderNoticeContainingAndCustomerNoticeContaining(
+//            String containerNumber, String carrierName, Set<ContainerStatus> containerStatuses, Set<ContainerType> containerTypes, LocalDate dateOfLoading, LocalDate dateOfDischarge, String portOfLoadingName, String portOfDischargeName, String forwarderNotice, String customerNotice);
 
 
 }

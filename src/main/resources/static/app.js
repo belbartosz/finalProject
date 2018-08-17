@@ -1,0 +1,1 @@
+var app = angular.module('app',['container-list', 'container-create','container-edit','container-create']);

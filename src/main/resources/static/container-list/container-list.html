@@ -1,0 +1,99 @@
+<form ng-submit="vm.search()">
+    <div class="form-group">
+        <label for="container.containerStatus">Container Status</label>
+        <input class="form.control" id="container.containerStatus" ng-model="vm.params.containerStatus" type="text"/>
+    </div>
+    <div class="form-group">
+        <label for="container.containerNumber">Container Number</label>
+        <input class="form.control" id="container.containerNumber" ng-model="vm.params.containerNumber" type="text"/>
+    </div>
+    <div class="form-group">
+        <label for="container.containerType">Container Type</label>
+        <input class="form.control" id="container.containerType" ng-model="vm.params.containerType" type="text"/>
+    </div>
+    <div class="form-group">
+        <label for="container.carrier">Carrier</label>
+        <input class="form.control" id="container.carrier" ng-model="vm.params.carrier" type="text"/>
+    </div>
+    <div class="form-group">
+        <label for="container.portOfLoading">Port of Loading</label>
+        <input class="form.control" id="container.portOfLoading" ng-model="vm.params.portOfLoading" type="text"/>
+    </div>
+    <div class="form-group">
+        <label for="container.dateOfLoading">Date of Loading</label>
+        <input class="form.control" id="container.dateOfLoading" ng-model="vm.params.dateOfLoading" type="date"/>
+    </div>
+    <div class="form-group">
+        <label for="container.portOfDischarge">Port of Discharge</label>
+        <input class="form.control" id="container.portOfDischarge" ng-model="vm.params.portOfDischarge" type="text"/>
+    </div>
+    <div class="form-group">
+        <label for="container.dateOfDischarge">Date of Discharge</label>
+        <input class="form.control" id="container.dateOfDischarge" ng-model="vm.params.dateOfDischarge" type="date"/>
+    </div>
+    <div class="form-group">
+        <label for="container.forwarderNotice">Forwarder Notice</label>
+        <input class="form.control" id="container.forwarderNotice" ng-model="vm.params.forwarderNotice" type="text"/>
+    </div>
+    <div class="form-group">
+        <label for="container.customerNotice">Customer Notice</label>
+        <input class="form.control" id="container.customerNotice" ng-model="vm.params.customerNotice" type="text"/>
+    </div>
+    <!--<div class="form-group">-->
+        <!--<label for="sort">Sort by</label>-->
+        <!--<select class="form-control select2.element" id="sort" ng-model="vm.params.sort"-->
+                <!--ng-options="sortOption.value as sortOption.displayName for sortOption in vm.sortOptions"></select>-->
+        <!--<script>-->
+            <!--$(document).ready(function () {-->
+                <!--$('.select2-element').select2();-->
+            <!--});-->
+        <!--</script>-->
+        <!--&lt;!&ndash;ten skrypt do autouzupelniania - raczej nie mieszamy htmla z javascript - to jest z jquery&ndash;&gt;-->
+
+    <!--</div>-->
+
+
+    <button type="submit" class="btn btn-primary">Search</button>
+
+</form>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <td>Container Status</td>
+        <td>Container Number</td>
+        <td>Container Type</td>
+        <td>Carrier</td>
+        <td>Port of Loading</td>
+        <td>Date of Loading</td>
+        <td>Port of Discharge</td>
+        <td>Date of Discharge</td>
+        <td>Forwarder Notice</td>
+        <td>Customer Notice</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="container in vm.containers">
+        <td>{{container.containerStatus}}</td>
+        <td>{{container.containerNumber}}</td>
+        <td>{{container.containerType}}</td>
+        <td>{{container.carrier}}</td>
+        <td>{{container.portOfLoading}}</td>
+        <td>{{container.dateOfLoading}}</td>
+        <td>{{container.portOfDischarge}}</td>
+        <td>{{container.dateOfDischarge}}</td>
+        <td>{{container.forwarderNotice}}</td>
+        <td>{{container.customerNotice}}</td>
+        <td>
+            <button class="btn btn-danger" ng-click="vm.remove(container.id)">Delete</button>
+            <button class="btn btn-success" ng-click="vm.edit(container.id)">Edit</button>
+        </td>
+    </tr>
+
+    </tbody>
+
+</table>
+
+<p>
+    {{vm.error}}
+</p>

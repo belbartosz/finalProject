@@ -58,12 +58,8 @@ public class Container {
     private LocalDate dateOfDischarge;
 
     @Column
-    @Size(max = 20, message = "Max 20 signs for this field")
-    private String shipperName_purchaseOrder;
-
-    @Column
     @Size(max = 200, message = "Max 200 signs for this field")
-    private String importantNotice;
+    private String forwarderNotice;
 
     @Column
     @Size(max = 200, message = "Max 200 signs for this field")

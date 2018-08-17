@@ -27,45 +27,44 @@ public class ContainerController {
         return containerService.create(container);
     }
 
-    @GetMapping
-    @ResponseStatus(HttpStatus.OK)
-    public List<Container> searchContainers(
-            @RequestParam(required = false, defaultValue = "") String containerName,
-            @RequestParam(required = false, defaultValue = "") String carrierName,
-            @RequestParam(name = "containerStatus", required = false) Set<ContainerStatus> containerStatuses,
-            @RequestParam(name = "containerType", required = false) Set<ContainerType> containerTypes,
-            @RequestParam(required = false) LocalDate dateOfLoading,
-            @RequestParam(required = false) LocalDate dateOfDischarge,
-            @RequestParam(required = false) String portOfLoadingName,
-            @RequestParam(required = false) String portOfDischargeName,
-            @RequestParam(required = false) String shipperName_purchaseOrder,
-            @RequestParam(required = false) String importantNotice,
-            @RequestParam(required = false) String customerNotice) {
-        if(CollectionUtils.isEmpty(containerStatuses)){
-            Set<ContainerStatus> allStatuses = new HashSet<>();
-            allStatuses.add(ContainerStatus.DELIVERED);
-            allStatuses.add(ContainerStatus.DEPARTURED);
-            allStatuses.add(ContainerStatus.DISCHARGED);
-            allStatuses.add(ContainerStatus.PLANNED);
-            allStatuses.add(ContainerStatus.ORDERED);
-        }
-        if(CollectionUtils.isEmpty(containerTypes)){
-            Set<ContainerType> allTypes = new HashSet<>();
-            allTypes.add(ContainerType.c20dv);
-            allTypes.add(ContainerType.c20flatrack);
-            allTypes.add(ContainerType.c20opentop);
-            allTypes.add(ContainerType.c20reefer);
-            allTypes.add(ContainerType.c40dv);
-            allTypes.add(ContainerType.c40hcdv);
-            allTypes.add(ContainerType.c40flatrack);
-            allTypes.add(ContainerType.c40hcreefer);
-            allTypes.add(ContainerType.c40opentop);
-            allTypes.add(ContainerType.c45hcpalletwide);
-        }
-        return containerService.search(containerName, carrierName, containerStatuses, containerTypes,
-                dateOfLoading, dateOfDischarge, portOfLoadingName, portOfDischargeName,
-                shipperName_purchaseOrder, importantNotice, customerNotice);
-    }
+//    @GetMapping
+//    @ResponseStatus(HttpStatus.OK)
+//    public List<Container> searchContainers(
+//            @RequestParam(required = false, defaultValue = "") String containerName,
+//            @RequestParam(required = false, defaultValue = "") String carrierName,
+//            @RequestParam(name = "containerStatus", required = false) Set<ContainerStatus> containerStatuses,
+//            @RequestParam(name = "containerType", required = false) Set<ContainerType> containerTypes,
+//            @RequestParam(required = false) LocalDate dateOfLoading,
+//            @RequestParam(required = false) LocalDate dateOfDischarge,
+//            @RequestParam(required = false) String portOfLoadingName,
+//            @RequestParam(required = false) String portOfDischargeName,
+//            @RequestParam(required = false) String forwarderNotice,
+//            @RequestParam(required = false) String customerNotice) {
+//        if(CollectionUtils.isEmpty(containerStatuses)){
+//            Set<ContainerStatus> allStatuses = new HashSet<>();
+//            allStatuses.add(ContainerStatus.DELIVERED);
+//            allStatuses.add(ContainerStatus.DEPARTURED);
+//            allStatuses.add(ContainerStatus.DISCHARGED);
+//            allStatuses.add(ContainerStatus.PLANNED);
+//            allStatuses.add(ContainerStatus.ORDERED);
+//        }
+//        if(CollectionUtils.isEmpty(containerTypes)){
+//            Set<ContainerType> allTypes = new HashSet<>();
+//            allTypes.add(ContainerType.c20dv);
+//            allTypes.add(ContainerType.c20flatrack);
+//            allTypes.add(ContainerType.c20opentop);
+//            allTypes.add(ContainerType.c20reefer);
+//            allTypes.add(ContainerType.c40dv);
+//            allTypes.add(ContainerType.c40hcdv);
+//            allTypes.add(ContainerType.c40flatrack);
+//            allTypes.add(ContainerType.c40hcreefer);
+//            allTypes.add(ContainerType.c40opentop);
+//            allTypes.add(ContainerType.c45hcpalletwide);
+//        }
+//        return containerService.search(containerName, carrierName, containerStatuses, containerTypes,
+//                dateOfLoading, dateOfDischarge, portOfLoadingName, portOfDischargeName,
+//                forwarderNotice, customerNotice);
+//    }
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)

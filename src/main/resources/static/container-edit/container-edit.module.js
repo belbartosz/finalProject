@@ -1,0 +1,1 @@
+angular.module('container-edit',['container', 'ngRoute']);

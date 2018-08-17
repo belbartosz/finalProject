@@ -29,13 +29,12 @@ public class ContainerService {
         return container.get();
     }
 
-    public List<Container> search(String containerNumber, String carrierName, Set<ContainerStatus> containerStatuses,
-                                            Set<ContainerType> containerTypes, LocalDate dateOfLoading, LocalDate dateOfDischarge,
-                                            String portOfLoadingName, String portOfDischargeName, String shipperName_purchaseOrder,
-                                            String importantNotice, String customerNotice) {
-        return containerRepository.findAllByContainerNumberContainingAndCarrier_NameContainingAndContainerStatusInAndContainerTypeInAndDateOfLoadingGreaterThanEqualAndDateOfDischargeLessThanEqualAndPortOfLoading_NameContainingAndPortOfDischarge_NameContainingAndShipperName_purchaseOrderContainingAndImportantNoticeContainingAndCustomerNoticeContaining(
-                containerNumber, carrierName, containerStatuses, containerTypes, dateOfLoading, dateOfDischarge, portOfLoadingName, portOfDischargeName, shipperName_purchaseOrder, importantNotice, customerNotice);
-    }
+//    public List<Container> search(String containerNumber, String carrierName, Set<ContainerStatus> containerStatuses,
+//                                   Set<ContainerType> containerTypes, LocalDate dateOfLoading, LocalDate dateOfDischarge,
+//                                   String portOfLoadingName, String portOfDischargeName, String forwarderNotice, String customerNotice) {
+//        return containerRepository.findAllByContainerNumberContainingAndCarrier_NameContainingAndContainerStatusInAndContainerTypeInAndDateOfLoadingGreaterThanEqualAndDateOfDischargeLessThanEqualAndPortOfLoading_NameContainingAndPortOfDischarge_NameContainingAndforwarderNoticeContainingAndCustomerNoticeContaining(
+//                containerNumber, carrierName, containerStatuses, containerTypes, dateOfLoading, dateOfDischarge, portOfLoadingName, portOfDischargeName, forwarderNotice, customerNotice);
+//    }
 
     public List<Container> getAll() {
         return containerRepository.findAll();

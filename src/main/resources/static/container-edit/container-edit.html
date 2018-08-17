@@ -1,0 +1,56 @@
+<form ng-submit="vm.update()">
+    <div class="form-group">
+        <label for="container.containerStatus">Container Status</label>
+        <input class="form.control" id="container.containerStatus" ng-model="vm.container.containerStatus" type="text"/>
+        <p class="red">{{vm.errors.containerStatus}}</p>
+    </div>
+    <div class="form-group">
+        <label for="container.containerNumber">Container Number</label>
+        <input class="form.control" id="container.containerNumber" ng-model="vm.container.containerNumber" type="text" />
+        <p class="red">{{vm.errors.containerNumber}}</p>
+    </div>
+    <div class="form-group">
+        <label for="container.containerType">Container Type</label>
+        <input class="form.control" id="container.containerType" ng-model="vm.container.containerType" type="text"/>
+        <p class="red">{{vm.errors.containerType}}</p>
+    </div>
+    <div class="form-group">
+        <label for="container.carrier">Carrier</label>
+        <input class="form.control" id="container.carrier" ng-model="vm.container.carrier" type="text" />
+        <p class="red">{{vm.errors.carrier}}</p>
+    </div>
+    <div class="form-group">
+        <label for="container.portOfLoading">Port of Loading</label>
+        <input class="form.control" id="container.portOfLoading" ng-model="vm.container.portOfLoading" type="text"/>
+        <p class="red">{{vm.errors.portOfLoading}}</p>
+    </div>
+    <div class="form-group">
+        <label for="container.dateOfLoading">Date of Loading</label>
+        <input class="form.control" id="container.dateOfLoading" ng-model="vm.container.dateOfLoading" type="date" />
+        <p class="red">{{vm.errors.dateOfLoading}}</p>
+    </div>
+    <div class="form-group">
+        <label for="container.portOfDischarge">Port of Discharge</label>
+        <input class="form.control" id="container.portOfDischarge" ng-model="vm.container.portOfDischarge" type="text"/>
+        <p class="red">{{vm.errors.portOfDischarge}}</p>
+    </div>
+    <div class="form-group">
+        <label for="container.dateOfDischarge">Date of Discharge</label>
+        <input class="form.control" id="container.dateOfDischarge" ng-model="vm.container.dateOfDischarge" type="date" />
+        <p class="red">{{vm.errors.dateOfDischarge}}</p>
+    </div>
+    <div class="form-group">
+        <label for="container.forwarderNotice">Forwarder Notice</label>
+        <input class="form.control" id="container.forwarderNotice" ng-model="vm.container.forwarderNotice" type="text"/>
+        <p class="red">{{vm.errors.forwarderNotice}}</p>
+    </div>
+    <div class="form-group">
+        <label for="container.customerNotice">Customer Notice</label>
+        <input class="form.control" id="container.customerNotice" ng-model="vm.container.customerNotice" type="text" />
+        <p class="red">{{vm.errors.customerNotice}}</p>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Save</button>
+
+
+</form>

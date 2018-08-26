@@ -22,11 +22,11 @@ public class CustomerController {
         return customerService.create(customer);
     }
 
-    @GetMapping
-    @ResponseStatus(HttpStatus.OK)
-    public List<Customer> searchCustomers (@RequestParam(value = "name", required = false) String name){
-        return customerService.search(name);
-    }
+//    @GetMapping
+//    @ResponseStatus(HttpStatus.OK)
+//    public List<Customer> searchCustomers (@RequestParam(value = "name", required = false) String name){
+//        return customerService.search(name);
+//    }
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)

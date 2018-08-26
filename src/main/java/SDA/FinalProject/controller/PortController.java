@@ -22,11 +22,11 @@ public class PortController {
         return portService.create(port);
     }
 
-    @GetMapping
-    @ResponseStatus(HttpStatus.OK)
-    public List<Port> searchPorts (@RequestParam(value = "name", required = false) String name){
-        return portService.search(name);
-    }
+//    @GetMapping
+//    @ResponseStatus(HttpStatus.OK)
+//    public List<Port> searchPorts (@RequestParam(value = "name", required = false) String name){
+//        return portService.search(name);
+//    }
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)

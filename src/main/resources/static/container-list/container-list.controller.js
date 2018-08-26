@@ -4,22 +4,6 @@ containerListModule.controller('ContainerListController', function (containerSer
 
     var vm = this;
 
-    vm.sortOptions = [
-        {
-            displayName: 'Name ASC',
-            value: 'name,asc'
-        }, {
-            displayName: 'Name DSC',
-            value: 'name,dsc'
-        }, {
-            displayName: 'Price ASC',
-            value: 'price,asc'
-        }, {
-            displayName: 'Price DSC',
-            value: 'price,dsc'
-        }
-    ];
-
     vm.params = {};
 
     vm.search = search;
@@ -31,12 +15,9 @@ containerListModule.controller('ContainerListController', function (containerSer
     function search() {
         containerService.search(vm.params)
             .then(function (response) {
-                // vm.products = response.content;
-                //   /\ dla Page zamiast listy
                 vm.containers = response;
             })
             .catch(function (response) {
-                // console.log(response);
                 vm.error = response.data.message;
             });
     }
@@ -48,8 +29,8 @@ containerListModule.controller('ContainerListController', function (containerSer
             })
     }
 
-    function edit(id) {
-        $location.path('/containers/edit/'+ id)
+    function edit(containerId) {
+        $location.path('/containers/edit/'+ containerId)
     }
 
 });

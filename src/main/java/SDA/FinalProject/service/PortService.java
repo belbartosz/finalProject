@@ -36,9 +36,9 @@ public class PortService {
         return portRepository.findAll(new Sort(Sort.Direction.ASC,"name"));
     }
 
-    public List<Port> search (String name){
-        return portRepository.findByNameContaining(name);
-    }
+//    public List<Port> search (String name){
+//        return portRepository.findByNameContaining(name);
+//    }
 
     public void deleteById (Long id){
         if(!portRepository.existsById(id)){

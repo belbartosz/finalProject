@@ -11,7 +11,7 @@ import java.util.List;
 public interface CarrierRepository extends JpaRepository<Carrier, Long> {
 
 
-    List<Carrier> findAllByNameContaining(String name);
+//    List<Carrier> findAllByNameContaining(String name);
     boolean existsByName(String name);
 
 }

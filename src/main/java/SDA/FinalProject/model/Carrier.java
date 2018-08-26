@@ -18,4 +18,7 @@ public class Carrier {
     @Size(min = 2, max = 20, message = "Carrier name should have min 2 & max 20 signs")
     private String name;
 
+    @Column(unique = true)
+    @Size(min = 5, max = 12)
+    private String password;
 }

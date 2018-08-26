@@ -65,11 +65,9 @@ public class Container {
     @Size(max = 200, message = "Max 200 signs for this field")
     private String customerNotice;
 
-    @ManyToMany
-    @JoinTable(name = "customers_containers",
-    joinColumns = @JoinColumn(name = "container_id"),
-    inverseJoinColumns = @JoinColumn(name = "customer_id"))
+    @ManyToOne
+    @JoinColumn(name = "customerID")
     @NotNull(message = "This field cannot be empty")
-    private List<Customer> customers;
+    private Customer customer;
 
 }

@@ -1,0 +1,1 @@
+angular.module('customer-create', ['customer','ngRoute']);

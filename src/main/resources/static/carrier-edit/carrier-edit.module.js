@@ -1,0 +1,1 @@
+angular.module('carrier-edit',['carrier', 'ngRoute']);

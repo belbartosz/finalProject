@@ -9,6 +9,6 @@ import java.util.List;
 @Repository
 public interface PortRepository extends JpaRepository<Port, Long> {
 
-    List<Port> findByNameContaining(String name);
+//    List<Port> findByNameContaining(String name);
     boolean existsByName(String name);
 }

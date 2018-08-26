@@ -1,0 +1,29 @@
+<a class="btn btn-newItem btn-md" href="#/ports/add" role="button"><b>Add New Port</b></a>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <td>
+            <h3><b>PORTS</b></h3>
+        </td>
+    </tr>
+    </thead>
+
+    <tbody>
+    <div class="ex1">
+    <tr ng-repeat="port in vm.ports">
+
+        <td><b>{{port.name}}</b></td>
+        <td>
+            <button class="btn btn-deleteItem btn-xs" ng-click="vm.remove(port.id)"><b>Delete</b></button>
+            <button class="btn btn-editItem btn-xs" ng-click="vm.edit(port.id)"><b>Edit</b></button>
+        </td>
+        </div>
+    </tr>
+    </tbody>
+
+</table>
+
+<p>
+    {{vm.error}}
+</p>

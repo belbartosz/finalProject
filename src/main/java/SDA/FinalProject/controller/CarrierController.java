@@ -23,11 +23,11 @@ public class CarrierController {
         return carrierService.create(carrier);
     }
 
-    @GetMapping
-    @ResponseStatus(HttpStatus.OK)
-    public List<Carrier> searchCarriers (@RequestParam(value = "name", required = false) String name){
-        return carrierService.search(name);
-    }
+//    @GetMapping
+//    @ResponseStatus(HttpStatus.OK)
+//    public List<Carrier> searchCarriers (@RequestParam(value = "name", required = false) String name){
+//        return carrierService.search(name);
+//    }
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)

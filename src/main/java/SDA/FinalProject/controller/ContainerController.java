@@ -9,9 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 
 @RestController
@@ -27,44 +25,45 @@ public class ContainerController {
         return containerService.create(container);
     }
 
-//    @GetMapping
-//    @ResponseStatus(HttpStatus.OK)
-//    public List<Container> searchContainers(
-//            @RequestParam(required = false, defaultValue = "") String containerName,
-//            @RequestParam(required = false, defaultValue = "") String carrierName,
-//            @RequestParam(name = "containerStatus", required = false) Set<ContainerStatus> containerStatuses,
-//            @RequestParam(name = "containerType", required = false) Set<ContainerType> containerTypes,
-//            @RequestParam(required = false) LocalDate dateOfLoading,
-//            @RequestParam(required = false) LocalDate dateOfDischarge,
-//            @RequestParam(required = false) String portOfLoadingName,
-//            @RequestParam(required = false) String portOfDischargeName,
-//            @RequestParam(required = false) String forwarderNotice,
-//            @RequestParam(required = false) String customerNotice) {
-//        if(CollectionUtils.isEmpty(containerStatuses)){
-//            Set<ContainerStatus> allStatuses = new HashSet<>();
-//            allStatuses.add(ContainerStatus.DELIVERED);
-//            allStatuses.add(ContainerStatus.DEPARTURED);
-//            allStatuses.add(ContainerStatus.DISCHARGED);
-//            allStatuses.add(ContainerStatus.PLANNED);
-//            allStatuses.add(ContainerStatus.ORDERED);
-//        }
-//        if(CollectionUtils.isEmpty(containerTypes)){
-//            Set<ContainerType> allTypes = new HashSet<>();
-//            allTypes.add(ContainerType.c20dv);
-//            allTypes.add(ContainerType.c20flatrack);
-//            allTypes.add(ContainerType.c20opentop);
-//            allTypes.add(ContainerType.c20reefer);
-//            allTypes.add(ContainerType.c40dv);
-//            allTypes.add(ContainerType.c40hcdv);
-//            allTypes.add(ContainerType.c40flatrack);
-//            allTypes.add(ContainerType.c40hcreefer);
-//            allTypes.add(ContainerType.c40opentop);
-//            allTypes.add(ContainerType.c45hcpalletwide);
-//        }
-//        return containerService.search(containerName, carrierName, containerStatuses, containerTypes,
-//                dateOfLoading, dateOfDischarge, portOfLoadingName, portOfDischargeName,
-//                forwarderNotice, customerNotice);
-//    }
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public List<Container> searchContainers(
+            @RequestParam(required = false, defaultValue = "") Long customerId,
+            @RequestParam(required = false, defaultValue = "") String containerNumber,
+            @RequestParam(required = false, defaultValue = "") Long carrierId,
+            @RequestParam(name = "containerStatus", required = false) Set<ContainerStatus> containerStatuses,
+            @RequestParam(name = "containerType", required = false) Set<ContainerType> containerTypes,
+            @RequestParam(required = false) LocalDate dateOfLoading,
+            @RequestParam(required = false) LocalDate dateOfDischarge,
+            @RequestParam(required = false) Long portOfLoadingId,
+            @RequestParam(required = false) Long portOfDischargeId,
+            @RequestParam(required = false) String forwarderNotice,
+            @RequestParam(required = false) String customerNotice) {
+        if(CollectionUtils.isEmpty(containerStatuses)){
+            Set<ContainerStatus> allStatuses = new HashSet<>();
+            allStatuses.add(ContainerStatus.DELIVERED);
+            allStatuses.add(ContainerStatus.DEPARTURED);
+            allStatuses.add(ContainerStatus.DISCHARGED);
+            allStatuses.add(ContainerStatus.PLANNED);
+            allStatuses.add(ContainerStatus.ORDERED);
+        }
+        if(CollectionUtils.isEmpty(containerTypes)){
+            Set<ContainerType> allTypes = new HashSet<>();
+            allTypes.add(ContainerType.c20dv);
+            allTypes.add(ContainerType.c20flatrack);
+            allTypes.add(ContainerType.c20opentop);
+            allTypes.add(ContainerType.c20reefer);
+            allTypes.add(ContainerType.c40dv);
+            allTypes.add(ContainerType.c40hcdv);
+            allTypes.add(ContainerType.c40flatrack);
+            allTypes.add(ContainerType.c40hcreefer);
+            allTypes.add(ContainerType.c40opentop);
+            allTypes.add(ContainerType.c45hcpalletwide);
+        }
+        return containerService.search(customerId, containerNumber, carrierId, containerStatuses, containerTypes,
+                dateOfLoading, dateOfDischarge, portOfLoadingId, portOfDischargeId,
+                forwarderNotice, customerNotice);
+    }
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
@@ -91,4 +90,15 @@ public class ContainerController {
         return containerService.updateById(container, id);
     }
 
+    @GetMapping("/containerTypes")
+    @ResponseStatus(HttpStatus.OK)
+    public List<ContainerType> getContainerTypes (){
+        return new ArrayList<>(EnumSet.allOf(ContainerType.class));
+    }
+
+    @GetMapping("/containerStatuses")
+    @ResponseStatus(HttpStatus.OK)
+    public List<ContainerStatus> getContainerStatuses (){
+        return new ArrayList<>(EnumSet.allOf(ContainerStatus.class));
+    }
 }

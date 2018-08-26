@@ -1,1 +1,2 @@
-var app = angular.module('app',['container-list', 'container-create','container-edit','container-create']);
+var app = angular.module('app',['container-list', 'container-create','container-edit','port-create','port-edit', 'port-list',
+    'carrier-list', 'carrier-create', 'carrier-edit', 'customer-create', 'customer-list', 'customer-edit']);

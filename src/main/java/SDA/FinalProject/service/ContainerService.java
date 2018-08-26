@@ -17,6 +17,7 @@ public class ContainerService {
     @Autowired
     private ContainerRepository containerRepository;
 
+
     public Container create(Container container) {
         return containerRepository.save(container);
     }
@@ -29,12 +30,11 @@ public class ContainerService {
         return container.get();
     }
 
-//    public List<Container> search(String containerNumber, String carrierName, Set<ContainerStatus> containerStatuses,
-//                                   Set<ContainerType> containerTypes, LocalDate dateOfLoading, LocalDate dateOfDischarge,
-//                                   String portOfLoadingName, String portOfDischargeName, String forwarderNotice, String customerNotice) {
-//        return containerRepository.findAllByContainerNumberContainingAndCarrier_NameContainingAndContainerStatusInAndContainerTypeInAndDateOfLoadingGreaterThanEqualAndDateOfDischargeLessThanEqualAndPortOfLoading_NameContainingAndPortOfDischarge_NameContainingAndforwarderNoticeContainingAndCustomerNoticeContaining(
-//                containerNumber, carrierName, containerStatuses, containerTypes, dateOfLoading, dateOfDischarge, portOfLoadingName, portOfDischargeName, forwarderNotice, customerNotice);
-//    }
+    public List<Container> search(Long customerId, String containerNumber, Long carrierId, Set<ContainerStatus> containerStatuses,
+                                   Set<ContainerType> containerTypes, LocalDate dateOfLoading, LocalDate dateOfDischarge,
+                                   Long portOfLoadingId, Long portOfDischargeId, String forwarderNotice, String customerNotice) {
+        return containerRepository.search(customerId, containerNumber, carrierId, containerStatuses, containerTypes, dateOfLoading, dateOfDischarge, portOfLoadingId, portOfDischargeId, forwarderNotice, customerNotice);
+        }
 
     public List<Container> getAll() {
         return containerRepository.findAll();

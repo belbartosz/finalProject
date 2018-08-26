@@ -1,8 +1,18 @@
 angular.module('container-edit')
-    .controller('ContainerEditController',function (container, containerService, $location) {
+    .controller('ContainerEditController',function (container, containerService, $location,  carriers, containerTypes, ports, containerStatuses, customers) {
         var vm = this;
 
         vm.container = container;
+
+        vm.customers = customers;
+
+        vm.carriers = carriers;
+
+        vm.containerTypes = containerTypes;
+
+        vm.ports = ports;
+
+        vm.containerStatuses = containerStatuses;
 
         vm.update = update;
 

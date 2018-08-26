@@ -1,0 +1,29 @@
+<a class="btn btn-newItem btn-md" href="#/customers/add" role="button"><b>Add New Customer</b></a>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <td>
+            <h3><b>CUSTOMERS</b></h3>
+        </td>
+    </tr>
+    </thead>
+
+    <tbody>
+    <div class="ex1">
+        <tr ng-repeat="customer in vm.customers">
+
+            <td><b>{{customer.name}}</b></td>
+            <td>
+                <button class="btn btn-deleteItem btn-xs" ng-click="vm.remove(customer.id)"><b>Delete</b></button>
+                <button class="btn btn-editItem btn-xs" ng-click="vm.edit(customer.id)"><b>Edit</b></button>
+            </td>
+    </div>
+    </tr>
+    </tbody>
+
+</table>
+
+<p>
+    {{vm.error}}
+</p>

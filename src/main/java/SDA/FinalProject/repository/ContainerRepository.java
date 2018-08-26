@@ -1,6 +1,7 @@
 package SDA.FinalProject.repository;
 
 import SDA.FinalProject.model.*;
+import SDA.FinalProject.repository.custom.ContainerRepositoryCustom;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -9,12 +10,13 @@ import java.util.List;
 import java.util.Set;
 
 @Repository
-public interface ContainerRepository extends JpaRepository<Container, Long> {
+public interface ContainerRepository extends JpaRepository<Container, Long>, ContainerRepositoryCustom {
 
-    List<Container> findAllByContainerNumberContaining(String name);
-
-//    List<Container> findAllByContainerNumberContainingAndCarrier_NameContainingAndContainerStatusInAndContainerTypeInAndDateOfLoadingGreaterThanEqualAndDateOfDischargeLessThanEqualAndPortOfLoading_NameContainingAndPortOfDischarge_NameContainingAndforwarderNoticeContainingAndCustomerNoticeContaining(
+//    List<Container> findAllByContainerNumberContaining(String name);
+//
+//    List<Container> findAllByContainerNumberContainingAndCarrier_NameContainingAndContainerStatusInAndContainerTypeInAndDateOfLoadingGreaterThanEqualAndDateOfDischargeLessThanEqualAndPortOfLoading_NameContainingAndPortOfDischarge_NameContainingAndForwarderNoticeContainingAndCustomerNoticeContaining(
 //            String containerNumber, String carrierName, Set<ContainerStatus> containerStatuses, Set<ContainerType> containerTypes, LocalDate dateOfLoading, LocalDate dateOfDischarge, String portOfLoadingName, String portOfDischargeName, String forwarderNotice, String customerNotice);
 
 
-}
+
+    }

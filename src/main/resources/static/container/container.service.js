@@ -7,11 +7,22 @@ angular.module('container')
             query: {
                 method: 'GET',
                 isArray: true,
-                url: 'http://localhost:8080/containers/searchContainers'
+                url: 'http://localhost:8080/containers/allContainers'
             },
             update: {
                 method: 'PUT'
+            },
+            getContainerTypes: {
+                method: 'GET',
+                isArray: true,
+                url: 'http://localhost:8080/containers/containerTypes'
+            },
+            getContainerStatuses: {
+                method: 'GET',
+                isArray: true,
+                url: 'http://localhost:8080/containers/containerStatuses'
             }
+
         });
 
         service.search = function (params) {
@@ -24,19 +35,33 @@ angular.module('container')
 
         service.remove = function (containerId) {
             return containerResource.remove({containerId: containerId}).$promise
-        }
+        };
 
         service.get = function (id) {
             return containerResource.get({
                 containerId: id
-            }).$promise;
+            }).$promise
+                .then(function(container) {
+                    container.dateOfDischarge = new Date(container.dateOfDischarge);
+                    container.dateOfLoading = new Date(container.dateOfLoading);
+                    return container;
+                });
         };
 
         service.update = function (container) {
             return containerResource.update(
                 {
-                    cobtainerId: container.id
+                    containerId: container.id
                 },
                 container).$promise;
+        };
+
+        service.getContainerTypes = function () {
+            return containerResource.getContainerTypes().$promise;
+
+        };
+
+        service.getContainerStatuses = function () {
+            return containerResource.getContainerStatuses().$promise;
         }
     });

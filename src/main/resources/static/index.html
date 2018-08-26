@@ -1,8 +1,8 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="app" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="app" class="no-js"> <!--<![endif]-->
+
+<html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8 lt-ie7">
+<html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8">
+<html lang="en" ng-app="app" class="no-js lt-ie9">
+<html lang="en" ng-app="app" class="no-js">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,37 +11,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
 </head>
 
-<div class="navbar-header">
-    <a class="navbar-brand" href="#">ContainerApp</a>
+<div>
+    <img src="jackarta.jpg" alt="problem with viewing the picture" width=100% height="200">
 </div>
-
 <body>
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
 
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Containers<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#/containers">List of Containers</a></li>
-                        <li><a href="#/containers/add">Add Container</a></li>
-                    </ul>
-                </li>
-                <!--<li class="dropdown">-->
-                    <!--<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Customers<span class="caret"></span></a>-->
-                    <!--<ul class="dropdown-menu">-->
-                        <!--<li><a href="#/receipts">List of Receipts</a></li>-->
-                        <!--<li><a href="#/receipts/add">Add Receipt</a></li>-->
-                    <!--</ul>-->
-                <!--</li>-->
-            </ul>
-        </div>
+<nav>
+    <div class="navbar navbar-inverse" aria-pressed="true">
+        <a class="navbar-brand" href="#/containers">CONTAINERS</a>
+        <a class="navbar-brand" href="#/customers">CUSTOMERS</a>
+        <a class="navbar-brand" href="#/carriers">CARRIERS</a>
+        <a class="navbar-brand" href="#/ports">PORTS</a>
+        <a class="navbar-brand">INVOICES</a>
+        <p class="navbar-text" style="color: darkorange">&copy; 2018 ContainerApp by Bartosz Belicki | All rights reserved</p>
     </div>
 </nav>
+
+
 
 <div ng-view></div>
 
@@ -52,6 +41,53 @@
 <script src="/webjars/angularjs/1.4.9/angular-route.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 <!--/\ ten ink do autouzupelniania-->
+
+
+
+<script src="/port/port.module.js"></script>
+<script src="/port/port.service.js"></script>
+
+<script src="/port-list/port-list.module.js"></script>
+<script src="/port-list/port-list.controller.js"></script>
+<script src="/port-list/port-list.routes.js"></script>
+
+<script src="/port-create/port-create.module.js"></script>
+<script src="/port-create/port-create.controller.js"></script>
+<script src="/port-create/port-create.routes.js"></script>
+
+<script src="/port-edit/port-edit.module.js"></script>
+<script src="/port-edit/port-edit.controller.js"></script>
+<script src="/port-edit/port-edit.routes.js"></script>
+
+<script src="/carrier/carrier.module.js"></script>
+<script src="/carrier/carrier.service.js"></script>
+
+<script src="/carrier-list/carrier-list.module.js"></script>
+<script src="/carrier-list/carrier-list.controller.js"></script>
+<script src="/carrier-list/carrier-list.routes.js"></script>
+
+<script src="/carrier-create/carrier-create.module.js"></script>
+<script src="/carrier-create/carrier-create.controller.js"></script>
+<script src="/carrier-create/carrier-create.routes.js"></script>
+
+<script src="/carrier-edit/carrier-edit.module.js"></script>
+<script src="/carrier-edit/carrier-edit.controller.js"></script>
+<script src="/carrier-edit/carrier-edit.routes.js"></script>
+
+<script src="/customer/customer.module.js"></script>
+<script src="/customer/customer.service.js"></script>
+
+<script src="/customer-list/customer-list.module.js"></script>
+<script src="/customer-list/customer-list.controller.js"></script>
+<script src="/customer-list/customer-list.routes.js"></script>
+
+<script src="/customer-create/customer-create.module.js"></script>
+<script src="/customer-create/customer-create.controller.js"></script>
+<script src="/customer-create/customer-create.routes.js"></script>
+
+<script src="/customer-edit/customer-edit.module.js"></script>
+<script src="/customer-edit/customer-edit.controller.js"></script>
+<script src="/customer-edit/customer-edit.routes.js"></script>
 
 <script src="/container/container.module.js"></script>
 <script src="/container/container.service.js"></script>
@@ -69,6 +105,8 @@
 <script src="/container-edit/container-edit.routes.js"></script>
 
 <script src="/app.js"></script>
+
+
 
 
 </body>

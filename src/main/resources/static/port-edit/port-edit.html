@@ -1,0 +1,7 @@
+<form ng-submit="vm.update()">
+    <div class="form-group">
+        <input class="form.control" ng-model="vm.port.name" type="text"/>
+        <p class="red">{{vm.errors.name}}</p>
+    </div>
+    <button class="btn btn-newItem" type="submit"><b>Save</b></button>
+</form>

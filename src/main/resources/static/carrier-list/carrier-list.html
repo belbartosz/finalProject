@@ -1,0 +1,29 @@
+<a class="btn btn-newItem btn-md" href="#/carriers/add" role="button"><b>Add New Carrier</b></a>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <td>
+            <h3><b>CARRIERS</b></h3>
+        </td>
+    </tr>
+    </thead>
+
+    <tbody>
+    <div class="ex1">
+        <tr ng-repeat="carrier in vm.carriers">
+
+            <td><b>{{carrier.name}}</b></td>
+            <td>
+                <button class="btn btn-deleteItem btn-xs" ng-click="vm.remove(carrier.id)"><b>Delete</b></button>
+                <button class="btn btn-editItem btn-xs" ng-click="vm.edit(carrier.id)"><b>Edit</b></button>
+            </td>
+    </div>
+    </tr>
+    </tbody>
+
+</table>
+
+<p>
+    {{vm.error}}
+</p>

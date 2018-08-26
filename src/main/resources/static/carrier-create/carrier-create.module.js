@@ -1,0 +1,1 @@
+angular.module('carrier-create', ['carrier','ngRoute']);

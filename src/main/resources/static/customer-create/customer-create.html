@@ -1,0 +1,11 @@
+<form ng-submit="vm.create()">
+    <div class="form-group">
+        <input class="form.control input-lg" placeholder="CUSTOMER NAME" ng-model="vm.customer.name" type="text"/>
+        <p class="red">{{vm.errors.name}}</p>
+    </div>
+    <div class="form-group">
+        <input class="form.control input-lg" placeholder="CUSTOMER PASSWORD" ng-model="vm.customer.password" type="text"/>
+        <p class="red">{{vm.errors.password}}</p>
+    </div>
+    <button class="btn btn-newItem" type="submit"><b>Add</b></button>
+</form>

@@ -1,1 +1,1 @@
-angular.module('container-create', ['container','ngRoute']);
+angular.module('container-create', ['container', 'carrier', 'port', 'customer', 'ngRoute']);

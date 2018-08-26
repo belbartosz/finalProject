@@ -36,9 +36,9 @@ public class CarrierService {
         return carrierRepository.findAll(new Sort(Sort.Direction.ASC,"name"));
     }
 
-    public List<Carrier> search (String name){
-        return carrierRepository.findAllByNameContaining(name);
-    }
+//    public List<Carrier> search (String name){
+//        return carrierRepository.findAllByNameContaining(name);
+//    }
 
     public void deleteById (Long id){
         if(!carrierRepository.existsById(id)){

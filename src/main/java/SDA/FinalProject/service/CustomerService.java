@@ -36,9 +36,9 @@ public class CustomerService {
         return customerRepository.findAll(new Sort(Sort.Direction.ASC,"name"));
     }
 
-    public List<Customer> search (String name){
-        return customerRepository.findByNameContaining(name);
-    }
+//    public List<Customer> search (String name){
+//        return customerRepository.findByNameContaining(name);
+//    }
 
     public void deleteById (Long id){
         if(!customerRepository.existsById(id)){

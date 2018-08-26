@@ -7,6 +7,22 @@ angular.module('container-edit')
             resolve: {
                 container: function (containerService, $route) {
                     return containerService.get($route.current.params.containerId);
+                },
+                containerTypes: function (containerService) {
+                    return containerService.getContainerTypes();
+
+                },
+                carriers: function (carrierService) {
+                    return carrierService.search();
+                },
+                ports: function (portService) {
+                    return portService.search();
+                },
+                containerStatuses: function (containerService) {
+                    return containerService.getContainerStatuses();
+                },
+                customers: function (customerService) {
+                    return customerService.search();
                 }
             }
         });
